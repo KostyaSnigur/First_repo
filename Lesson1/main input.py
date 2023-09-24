@@ -6,3 +6,5 @@ print(f"Hello Mr: {name} {age}")
 
 print("*" * 10)
 print("Mr: " + name + str(age))
+
+print("Mr: ", name, age)
