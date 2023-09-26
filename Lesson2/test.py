@@ -1,8 +1,18 @@
-work_experience = int(input("Enter your full work experience in years: "))
+import math
 
-    if work_experience 2:
-    developer_type = "Middle"
-    elif work_experience < 1:
-    developer_type = "Junior"
-    else: 
-    developer_type = "Senior"
+a = int(input("Enter coefficient a: "))
+b = int(input("Enter coefficient b: "))
+c = int(input("Enter coefficient c: "))
+
+D = b ** 2 - 4 * a * c
+
+if D > 0:
+    x1 = (-b + math.sqrt(D)) / (2 * a)
+    x2 = (-b - math.sqrt(D)) / (2 * a)
+    print(x1)
+    print(x2)
+elif D == 0:
+    x1 = -b % (2 * a)
+    x2 = -b % (2 * a)
+    print(x1)
+    print(x2)
