@@ -1,13 +1,9 @@
-a = 5
-b = 0
-
-
-def fun():
-    global a
-    a = 10
-    b = 2
-
-
-fun()
-print(a)  # 10
-print(b)  # 0
+def func_outer():
+    x = 2
+    def func_inner():
+        nonlocal x
+        x = 6
+    func_inner()
+    return x
+result = func_outer()
+print(result)  # 5
