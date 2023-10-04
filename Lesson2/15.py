@@ -4,29 +4,45 @@ operator = None
 wait_for_number = True
 
 while True:
-    enter = input(">>> ")
-    if enter == "=":
-        print(f"Result: {result}")
-    if wait_for_number:
-        try:
-            operand = float(enter)
+    try:
+        if wait_for_number:
+            operand = float(input(">>> "))
+            if not result:
+                result = operand
+            else:
+                if operator == "+":
+                    result += operand
+                elif operator == "-":
+                    result -= operand
+                elif operator == "*":
+                    result *= operand
+                elif operator == "/":
+                    result /= operand
             wait_for_number = False
-        except ValueError:
-            print("Invalid number")
-        if operator == "+":
-            result += operand
-        elif operator == "-":
-            result -= operand
-        elif operator == "*":
-            result *operand
-        elif operator == "/":
-            result / operand
-            try:
-                result = result / operand
-            except ZeroDivisionError:
-                print("Divide by zero!")
         else:
-            result = operand      
+            operator = input(">>> ")
+            if operator == "=":
+                print(f"Result: {result}")
+                break
+            elif operator in operators:
+                wait_for_number = True
+            else:
+                print("Unknown operator. Try again!")
+
+    except ValueError:
+        print("That's not an int! Try again!")
+    except ZeroDivisionError:
+        print("Can't divide by 0. Try again!")
+    except Exception as e:
+        print(e)
+
+
+    else:
+        if enter == "+" or enter == "-" or enter == "*" or enter == "/":
+            wait_for_number = True
+            operator = enter
+        else:
+            print("Error. Try again")    
 
 
 
