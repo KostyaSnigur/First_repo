@@ -2,6 +2,7 @@ result = None
 operand = None
 operator = None
 wait_for_number = True
+operators = "+-*/"
 
 while True:
     try:
@@ -35,14 +36,3 @@ while True:
         print("Can't divide by 0. Try again!")
     except Exception as e:
         print(e)
-
-
-    else:
-        if enter == "+" or enter == "-" or enter == "*" or enter == "/":
-            wait_for_number = True
-            operator = enter
-        else:
-            print("Error. Try again")    
-
-
-
