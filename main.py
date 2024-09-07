@@ -11,3 +11,4 @@ c = -6
 D = (b * b) - 4 * a * c
 x1 = (-b + math.sqrt(D)) / (2 * a)
 x2 = (-b - math.sqrt(D)) / (2 * a)
+print("Hello, World")
